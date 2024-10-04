@@ -1,6 +1,6 @@
 import random
 import unittest
-import scipy
+import scipy.stats
 
 import basic_math
 
