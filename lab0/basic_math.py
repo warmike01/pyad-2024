@@ -5,7 +5,7 @@ def matrix_multiplication(matrix1, matrix2):
     """
     if len(matrix1[0]) != len(matrix2):
         #перемножить нельзя
-        return None
+        raise ValueError
     else:
         result = []
         rows=len(matrix1)
