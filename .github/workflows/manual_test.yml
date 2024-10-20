@@ -17,4 +17,4 @@ jobs:
         pip install numpy scipy
     - name: Run unittests
       run: |
-        python -m unittest discover ${{ github.head_ref }}
+        python -m unittest discover ${{ github.ref_name }}
