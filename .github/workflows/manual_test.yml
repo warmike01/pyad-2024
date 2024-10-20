@@ -17,4 +17,4 @@ jobs:
         pip install numpy scipy
     - name: Run unittests
       run: |
-        python -m unittest discover -s main/lab0
+        python -m unittest discover -s lab0
