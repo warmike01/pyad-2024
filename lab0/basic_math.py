@@ -67,22 +67,38 @@ def functions(a_1, a_2):
                 sol2_x= (-D_t ** 0.5 - b_t) / 2 / a_t
                 sol2_y = sol2_x *sol2_x*a1 + sol2_x*b1 + c1
                 return [tuple([sol1_x, sol1_y]), tuple([sol2_x, sol2_y])]
+"""
+coeffs1 = "0 2 -1" 
+coeffs2 = "1 -4 4"
+print(functions(coeffs1, coeffs2))
+"""
 
 
-
-def skew(x):
+def skew(arr):
     """
     Задание 3. Функция для расчета коэффициента асимметрии.
     Необходимо вернуть значение коэффициента асимметрии, округленное до 2 знаков после запятой.
     """
     # put your code here
-    pass
-
-
-def kurtosis(x):
+    avg = sum(arr)/ len(arr)
+    var = 0
+    m3 = 0
+    for i in arr:
+        var += (i - avg) ** 2
+        m3 += (i - avg) ** 3
+    var /= len(arr)
+    m3 /= len(arr)
+    return round(m3 / var **(3/2), 2)
+"""
+import scipy.stats as sc
+x1 = [2,3,2,5,7,2,2,8]
+print(skew(x1))
+print(round(sc.skew(x1), 2))
+"""
+def kurtosis(arr):
     """
     Задание 3. Функция для расчета коэффициента эксцесса.
     Необходимо вернуть значение коэффициента эксцесса, округленное до 2 знаков после запятой.
     """
     # put your code here
-    pass
+    var = 0
