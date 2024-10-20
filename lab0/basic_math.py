@@ -101,4 +101,18 @@ def kurtosis(arr):
     Необходимо вернуть значение коэффициента эксцесса, округленное до 2 знаков после запятой.
     """
     # put your code here
+    avg = sum(arr)/ len(arr)
     var = 0
+    m4 = 0
+    for i in arr:
+        var += (i - avg) ** 2
+        m4 += (i - avg) ** 4
+    var /= len(arr)
+    m4 /= len(arr)
+    return round(m4 / var **2 - 3, 2)
+"""
+import scipy.stats as sc
+x1 = [2,3,2,5,7,2,2,8]
+print(kurtosis(x1))
+print(round(sc.kurtosis(x1), 2))
+"""
